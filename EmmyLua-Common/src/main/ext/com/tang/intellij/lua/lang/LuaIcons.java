@@ -1,6 +1,7 @@
 package com.tang.intellij.lua.lang;
 
-import javax.swing.*;
+
+import com.intellij.icons.Icon;
 
 public class LuaIcons {
     public static final Icon FILE = null;

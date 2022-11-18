@@ -18,7 +18,6 @@ package com.tang.intellij.lua.editor.completion
 
 import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElementBuilder
-import com.intellij.lang.Language
 import com.intellij.patterns.PlatformPatterns.psiElement
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.util.ProcessingContext
@@ -26,7 +25,6 @@ import com.intellij.util.Processor
 import com.tang.intellij.lua.comment.LuaCommentUtil
 import com.tang.intellij.lua.comment.psi.*
 import com.tang.intellij.lua.comment.psi.api.LuaComment
-import com.tang.intellij.lua.lang.LuaIcons
 import com.tang.intellij.lua.lang.LuaParserDefinition
 import com.tang.intellij.lua.psi.LuaClassField
 import com.tang.intellij.lua.psi.LuaFuncBodyOwner
@@ -45,10 +43,10 @@ class LuaDocCompletionContributor : CompletionContributor() {
             override fun addCompletions(completionParameters: CompletionParameters, processingContext: ProcessingContext, completionResultSet: CompletionResultSet) {
                 val set = LuaParserDefinition.DOC_TAG_TOKENS
                 for (type in set.types) {
-                    completionResultSet.addElement(LookupElementBuilder.create(type).withIcon(LuaIcons.ANNOTATION))
+                    completionResultSet.addElement(LookupElementBuilder.create(type))//.withIcon(LuaIcons.ANNOTATION))
                 }
                 ADDITIONAL_TAGS.forEach { tagName ->
-                    completionResultSet.addElement(LookupElementBuilder.create(tagName).withIcon(LuaIcons.ANNOTATION))
+                    completionResultSet.addElement(LookupElementBuilder.create(tagName))//.withIcon(LuaIcons.ANNOTATION))
                 }
                 completionResultSet.stopHere()
             }
@@ -75,7 +73,7 @@ class LuaDocCompletionContributor : CompletionContributor() {
                             for (def in parDefList) {
                                 completionResultSet.addElement(
                                         LookupElementBuilder.create(def.text)
-                                                .withIcon(LuaIcons.PARAMETER)
+                                                //.withIcon(LuaIcons.PARAMETER)
                                 )
                             }
                         }
@@ -106,7 +104,7 @@ class LuaDocCompletionContributor : CompletionContributor() {
                 })
 
                 LuaShortNamesManager.getInstance(project).processAllAlias(project, Processor { key ->
-                    completionResultSet.addElement(LookupElementBuilder.create(key).withIcon(LuaIcons.Alias))
+                    completionResultSet.addElement(LookupElementBuilder.create(key))//.withIcon(LuaIcons.Alias))
                     true
                 })
                 completionResultSet.stopHere()
@@ -131,8 +129,8 @@ class LuaDocCompletionContributor : CompletionContributor() {
                     val ctx = SearchContext.get(classDef.project)
                     classType.processMembers(ctx) { _, member ->
                         if (member is LuaClassField && member.name != null)
-                            completionResultSet.addElement(LookupElementBuilder.create(member.name).withIcon(LuaIcons.CLASS_FIELD))
-                        Unit
+                            completionResultSet.addElement(LookupElementBuilder.create(member.name))//.withIcon(LuaIcons.CLASS_FIELD))
+
                     }
                 }
             }
@@ -149,7 +147,7 @@ class LuaDocCompletionContributor : CompletionContributor() {
                     classType?.processMembers(ctx) { _, member ->
                         if(member.name != null) {
                             completionResultSet.addElement(
-                                LookupElementBuilder.create(member.name!!).withIcon(LuaIcons.CLASS_FIELD)
+                                LookupElementBuilder.create(member.name!!)//.withIcon(LuaIcons.CLASS_FIELD)
                             )
                         }
                         Unit

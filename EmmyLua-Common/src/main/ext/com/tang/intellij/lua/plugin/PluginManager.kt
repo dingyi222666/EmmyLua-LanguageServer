@@ -49,8 +49,8 @@ object PluginManager {
     }
 
     private fun loadCorePlugin() {
-        val location = javaClass.protectionDomain.codeSource.location
-        val descriptor = PluginDescriptor("core", location.toURI())
+        //val location = javaClass.protectionDomain.codeSource.location
+        val descriptor = PluginDescriptor("core", URI.create(""))
         descriptor.classLoader = coreClassLoader
         corePluginDescriptor = descriptor
         loadPluginXML(coreClassLoader, descriptor)

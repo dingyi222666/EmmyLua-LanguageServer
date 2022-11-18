@@ -1,6 +1,6 @@
 package com.intellij.icons;
 
-import javax.swing.*;
+import com.intellij.icons.Icon;
 
 public class AllIcons {
     public static class Nodes {

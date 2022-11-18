@@ -4,6 +4,7 @@ package com.tang.intellij.lua.editor.completion
 
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.psi.tree.IElementType
+import com.intellij.icons.Icon
 import com.tang.intellij.lua.lang.LuaIcons
 import com.tang.intellij.lua.psi.LuaClassField
 import com.tang.intellij.lua.psi.LuaClassMember
@@ -16,7 +17,7 @@ import com.tang.intellij.lua.ty.hasVarargs
 import com.tang.lsp.ExtendApiBase
 import com.tang.lsp.ILuaFile
 import org.eclipse.lsp4j.CompletionItemKind
-import javax.swing.Icon
+
 
 object LookupElementFactory {
 

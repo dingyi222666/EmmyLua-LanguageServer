@@ -16,10 +16,8 @@
 
 package com.tang.intellij.lua.editor.completion
 
-import com.intellij.codeInsight.completion.CompletionInitializationContext
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.completion.PrefixMatcher
-import com.intellij.codeInsight.completion.PrioritizedLookupElement
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.openapi.progress.ProgressManager
 import com.intellij.openapi.project.Project
@@ -30,7 +28,6 @@ import com.tang.intellij.lua.search.SearchContext
 import com.tang.intellij.lua.ty.*
 import com.tang.lsp.ILuaFile
 import com.tang.lsp.toRange
-import org.eclipse.lsp4j.CompletionItemKind
 import org.eclipse.lsp4j.TextEdit
 
 enum class MemberCompletionMode {

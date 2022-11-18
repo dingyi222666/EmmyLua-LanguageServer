@@ -17,8 +17,6 @@ package com.intellij.navigation;
 
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
-
 /**
  * The presentation of an item in a tree, list or similar view.
  *
@@ -49,6 +47,5 @@ public interface ItemPresentation {
      *
      * @param unused Used to mean if open/close icons for tree renderer. No longer in use. The parameter is only there for API compatibility reason.
      */
-    @Nullable
-    Icon getIcon(boolean unused);
+    //Icon getIcon(boolean unused);
 }

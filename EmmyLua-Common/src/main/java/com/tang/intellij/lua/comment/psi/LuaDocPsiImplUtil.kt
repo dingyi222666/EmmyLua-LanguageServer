@@ -18,7 +18,6 @@
 
 package com.tang.intellij.lua.comment.psi
 
-import com.intellij.icons.AllIcons
 import com.intellij.navigation.ItemPresentation
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiNameIdentifierOwner
@@ -32,11 +31,9 @@ import com.tang.intellij.lua.comment.reference.LuaDocParamNameReference
 import com.tang.intellij.lua.comment.reference.LuaDocSeeReference
 import com.tang.intellij.lua.psi.LuaClassMember
 import com.tang.intellij.lua.psi.LuaElementFactory
-import com.tang.intellij.lua.psi.LuaParamNameDef
 import com.tang.intellij.lua.psi.Visibility
 import com.tang.intellij.lua.search.SearchContext
 import com.tang.intellij.lua.ty.*
-import javax.swing.Icon
 
 /**
 
@@ -183,9 +180,7 @@ fun getPresentation(tagClass: LuaDocTagClass): ItemPresentation {
             return tagClass.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return AllIcons.Nodes.Class
-        }
+
     }
 }
 
@@ -238,9 +233,6 @@ fun getPresentation(tagField: LuaDocTagField): ItemPresentation {
             return tagField.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return AllIcons.Nodes.Field
-        }
     }
 }
 

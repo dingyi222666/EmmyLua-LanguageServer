@@ -19,7 +19,6 @@
 package com.tang.intellij.lua.psi
 
 import com.intellij.extapi.psi.StubBasedPsiElementBase
-import com.intellij.icons.AllIcons
 import com.intellij.navigation.ItemPresentation
 import com.intellij.psi.*
 import com.intellij.psi.impl.source.resolve.reference.ReferenceProvidersRegistry
@@ -31,14 +30,12 @@ import com.tang.intellij.lua.comment.LuaCommentUtil
 import com.tang.intellij.lua.comment.psi.LuaDocAccessModifier
 import com.tang.intellij.lua.comment.psi.LuaDocTagVararg
 import com.tang.intellij.lua.comment.psi.api.LuaComment
-import com.tang.intellij.lua.lang.LuaIcons
 import com.tang.intellij.lua.lang.type.LuaString
 import com.tang.intellij.lua.search.SearchContext
 import com.tang.intellij.lua.stubs.LuaClassMemberStub
 import com.tang.intellij.lua.stubs.LuaFuncBodyOwnerStub
 import com.tang.intellij.lua.ty.*
 import java.util.*
-import javax.swing.Icon
 
 fun setName(owner: PsiNameIdentifierOwner, name: String): PsiElement {
     val oldId = owner.nameIdentifier
@@ -112,9 +109,6 @@ fun getPresentation(classMethodDef: LuaClassMethodDef): ItemPresentation {
             return classMethodDef.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return LuaIcons.CLASS_METHOD
-        }
     }
 }
 
@@ -165,9 +159,7 @@ fun getPresentation(funcDef: LuaFuncDef): ItemPresentation {
             return funcDef.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return AllIcons.Nodes.Function
-        }
+
     }
 }
 
@@ -272,9 +264,7 @@ fun getPresentation(indexExpr: LuaIndexExpr): ItemPresentation {
             return indexExpr.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return LuaIcons.CLASS_FIELD
-        }
+
     }
 }
 
@@ -504,9 +494,7 @@ fun getPresentation(tableField: LuaTableField): ItemPresentation {
             return tableField.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return LuaIcons.CLASS_FIELD
-        }
+
     }
 }
 
@@ -535,9 +523,7 @@ fun getPresentation(nameExpr: LuaNameExpr): ItemPresentation {
             return nameExpr.containingFile.name
         }
 
-        override fun getIcon(b: Boolean): Icon? {
-            return LuaIcons.CLASS_FIELD
-        }
+
     }
 }
 

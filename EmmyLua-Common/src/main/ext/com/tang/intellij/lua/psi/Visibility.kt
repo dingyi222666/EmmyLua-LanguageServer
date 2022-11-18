@@ -17,8 +17,9 @@
 package com.tang.intellij.lua.psi
 
 import com.intellij.util.BitUtil
+import com.intellij.icons.Icon
 import com.tang.intellij.lua.lang.LuaIcons
-import javax.swing.Icon
+
 
 enum class Visibility(val text: String, val icon: Icon?, val bitMask: Int) {
     PUBLIC("public", LuaIcons.PUBLIC, 0x1),
